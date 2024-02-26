@@ -4,39 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CricWiz</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #4c263b;
+        }
+
+        .logo {
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            width: 150px; /* You can adjust this as per your logo's aspect ratio */
+            height: auto;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #fff0e6;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #555;
+            color: white; 
+        }
+
+        .logo img {
+            width: 400px; 
+            height: auto;
+        }
+
+    </style>
 </head>
 <body>
-    <h2>Enter Cricket Match Details</h2>
-    <form action="/" method="post">
-        <label for="batting_team">Batting Team:</label>
-        <input type="text" id="batting_team" name="batting_team" required><br><br>
-
-        <label for="bowling_team">Bowling Team:</label>
-        <input type="text" id="bowling_team" name="bowling_team" required><br><br>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required><br><br>
-
-        <label for="runs">Runs Scored:</label>
-        <input type="number" id="runs" name="runs" required><br><br>
-
-        <label for="overs">Overs Completed:</label>
-        <input type="number" id="overs" name="overs" required><br><br>
-
-        <label for="wickets">Wickets Lost:</label>
-        <input type="number" id="wickets" name="wickets" required><br><br>
-
-        <label for="last_five">Runs in Last 5 Overs:</label>
-        <input type="number" id="last_five" name="last_five" required><br><br>
-
-        <input type="submit" value="Predict Score">
-    </form>
-    <br><br>
-    {% if prediction %}
-        <div class="prediction-result">
-            Predicted Score: {{ prediction }}
-        </div>
-    {% endif %}
-    
+    <div class="logo">
+        <img src="{{ url_for('static', filename='IMG_6472.png') }}" alt="CricWiz Logo">
+    </div>
+    <div>
+        <a href="{{ url_for('predict_score') }}" class="button">Predict Score</a>
+        <a href="{{ url_for('predict_win_prob') }}" class="button">Win Probability</a>
+        <a href="{{ url_for('about') }}" class="button">About</a>
+    </div>
 </body>
 </html>

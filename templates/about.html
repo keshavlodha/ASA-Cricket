@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CricWiz</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #603b50;
+            color: white;
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .about-text {
+            margin: 7em;
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        .team {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* This will center the team members */
+            align-items: center;
+        }
+
+        .team-member {
+            margin: 20px;
+        }
+
+        .team-photo {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .heading {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center; /* Center the navigation items */
+            background-color: #6e4352; /* A shade lighter or darker than the sidebar for contrast */
+            padding: 20px 20px; /* Increase padding for more space */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+        }
+
+        
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500; /* Slightly bolder font */
+            font-size: 1.1em; /* Slightly larger font size */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #ffffff; /* Light color for hover */
+            color: #4c263b; /* Dark color for text on hover for contrast */
+            border-radius: 5px; /* Rounded corners for aesthetics */
+        }
+
+        .on-page{
+            background-color: #ffffff; /* Light color for hover */
+            color: #4c263b;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('predict_win_prob') }}">Predict Score</a>
+        <a href="{{ url_for('predict_win_prob') }}">Predict Win Probability</a>
+        <a href="{{ url_for('about') }}" class="on-page" style="color: #4c263b;">About</a>
+    </div>
+    <div class="about-text">
+        <h2 class="heading">About CricWiz</h2>
+        <p>
+            Welcome to CricWiz, the cutting-edge companion for every cricket enthusiast. At the heart of CricWiz lies a powerful blend of passion and technology, fueled by advanced Machine Learning algorithms. Our mission is to revolutionize the way cricket analytics are experienced.
+        </p>
+        <p>
+            We provide real-time predictions on the scores and winning probabilities, offering fans and analysts a deeper insight into the game's possible outcomes. Our predictive models are meticulously crafted by a dedicated team at Aggie Sports Analytics, a collective of data aficionados and sports experts committed to elevating the sports analytics arena.
+        </p>
+        <p>
+            By integrating complex datasets with intuitive interfaces, CricWiz stands out as an indispensable tool for those looking to delve beyond the surface of cricket statistics. Whether you're rooting for your favorite team or seeking data-driven predictions, CricWiz is your ticket to a more informed and engaging cricketing experience.
+        </p>
+        <p>
+            Join us as we continue to innovate and celebrate the spirit of cricket through the lens of analytics.
+        </p>
+    </div>
+    <h2 style="margin-bottom: 0; padding-bottom: 0;">Meet the Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='IMG_2146.jpg') }}" alt="Member 1">
+            <div class="team-name">Keshav Lodha</div>
+        </div>
+
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='IMG_2198.jpeg') }}"alt="Member 2">
+            <div class="team-name">Aaron Luong</div>
+        </div>
+
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='headshot.jpg') }}" alt="Member 2">
+            <div class="team-name">Nathaniel Maffly</div>
+        </div>
+
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='1695848724089.jpg') }}" alt="Member 2">
+            <div class="team-name">Nikhil Karthikeyan</div>
+        </div>
+
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='Jim_headshot.jpg') }}" alt="Member 2">
+            <div class="team-name">Jim Qu</div>
+        </div>
+
+        <div class="team-member">
+            <img class="team-photo" src="{{ url_for('static', filename='IMG_2563.jpg') }}" alt="Member 2">
+            <div class="team-name">Luis Cortez</div>
+        </div>
+        
+        
+        <!-- Add more team members as needed -->
+
+    </div>
+</body>
+</html>
